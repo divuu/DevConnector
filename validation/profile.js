@@ -6,7 +6,7 @@ module.exports = function validateProfileInput(data) {
 
   data.handle = !isEmpty(data.handle) ? data.handle : "";
   data.status = !isEmpty(data.status) ? data.status : "";
-  //data.skills = !isEmpty(data.skills) ? data.skills : "";
+  data.skills = !isEmpty(data.skills) ? data.skills : "";
 
   if (!Validator.isLength(data.handle, { min: 2, max: 30 })) {
     errors.handle = "Handle must be between 2 and 30 Charcaters";
@@ -20,9 +20,9 @@ module.exports = function validateProfileInput(data) {
     errors.status = "Status Field is required";
   }
 
-  //   if (Validator.isEmpty(data.skills)) {
-  //     errors.skills = "Skills Field is required";
-  //   }
+  if (Validator.isEmpty(data.skills)) {
+    errors.skills = "Skills Field is required";
+  }
 
   if (!isEmpty(data.website)) {
     if (!Validator.isURL(data.website)) {

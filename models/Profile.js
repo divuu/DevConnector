@@ -26,7 +26,8 @@ const ProfileSchema = new Schema({
     required: true
   },
   skills: {
-    type: String
+    type: [String],
+    required: true
   },
   bio: {
     type: String
@@ -37,19 +38,19 @@ const ProfileSchema = new Schema({
   experience: [
     {
       title: {
-        type: String,
-        required: true
+        type: String
+        //required: true
       },
       company: {
-        type: String,
-        required: true
+        type: String
+        //required: true
       },
       location: {
         type: String
       },
       from: {
-        type: Date,
-        required: true
+        type: Date
+        //required: true
       },
       to: {
         type: Date
@@ -66,20 +67,20 @@ const ProfileSchema = new Schema({
   education: [
     {
       school: {
-        type: String,
-        required: true
+        type: String
+        ///required: true
       },
       degree: {
-        type: String,
-        required: true
+        type: String
+        //required: true
       },
       fieldofstudy: {
-        type: String,
-        required: true
+        type: String
+        //required: true
       },
       from: {
-        type: Date,
-        required: true
+        type: Date
+        //required: true
       },
       to: {
         type: Date
@@ -93,7 +94,7 @@ const ProfileSchema = new Schema({
       }
     }
   ],
-  Socail: {
+  social: {
     youtube: {
       type: String
     },
