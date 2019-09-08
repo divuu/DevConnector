@@ -1,18 +1,20 @@
 import React, { Component } from "react";
+import { getPosts } from "../../actions/postActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import PostForm from "./PostForm";
 import PostFeed from "./PostFeed";
 import Spinner from "../common/Spinner";
-import { getPosts } from "../../actions/postActions";
 
 class Posts extends Component {
   componentDidMount() {
     this.props.getPosts();
+    //alert(lopo);
   }
 
   render() {
     const { posts, loading } = this.props.post;
+    //console.log(posts);
     let postContent;
 
     if (posts === null || loading) {
