@@ -159,9 +159,10 @@ export const clearCurrentProfile = () => {
 
 //Get Profile By Handle
 export const getProfileByHandle = handle => dispatch => {
+  console.log(handle);
   dispatch(setProfileLoading());
   axios
-    .get(`api/profile/handle/${handle}`)
+    .get(`/api/profile/handle/${handle}`)
     .then(res =>
       dispatch({
         type: GET_PROFILE,

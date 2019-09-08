@@ -22,6 +22,8 @@ import AddExperience from "./components/add-credetial/AddExperience";
 import AddEducation from "./components/add-credetial/AddEducation";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
+import NotFound from "./components/not-found/NotFound";
+import Posts from "./components/posts/Posts";
 
 //check for  token
 if (localStorage.jwtToken) {
@@ -42,7 +44,7 @@ if (localStorage.jwtToken) {
     //Redirect to login
     window.location.href = "/login";
   }
-}    
+}
 
 class App extends Component {
   render() {
@@ -88,6 +90,10 @@ class App extends Component {
                   component={AddEducation}
                 />
               </Switch>
+              <Switch>
+                <PrivateRoute exact path="/feed" component={Posts} />
+              </Switch>
+              <Route exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </div>
